@@ -17,10 +17,10 @@ const questions = [
 
 
     {
-            type: "list",
-            name: 'employeeType', 
-            message: "What is the role of the employee?",
-            choices: ['Executive', 'Manager', 'Intern']
+        type: "list",
+        name: 'employeeType', 
+        message: "What is the role of the employee?",
+        choices: ['Engineer', 'Manager', 'Intern']
     },
 
     {
