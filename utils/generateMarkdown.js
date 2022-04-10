@@ -1,3 +1,30 @@
+//function to generateHTML 
+//accepts employee array
+//for employee (map, filter) 
+//create html array to hold the entire html string 
+
+//f(x1)
+//f(x2)...
+//if engineer, manager, intern, call diff function for each type of employee to output <div> using template literals (BOOT STRAP)
+//inside of if: save into massive html string. (card types)
+
+
+//join array together with return html.join('')
+
+//^^put into retrun render( html.join output)
+
+//create function to provide template (doctype, head main tags)
+  //have it accept the data from html.join for one massive template literal 
+  //return final html render (doc type, head, card types) 
+
+
+
+
+//function to generatePage
+
+
+
+
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
