@@ -1,7 +1,5 @@
-// TODO: Include packages needed for this application
-// npm installed (package.json initiated) and inquirer installed
-//npm install inquirer
 const fs = require('fs');
+const path = require('path');
 const inquirer = require('inquirer');
 const Choices = require('inquirer/lib/objects/choices');
 const profileDataArgs = process.argv.slice(2, process.argv.length);
@@ -39,8 +37,6 @@ const questions = [
     message: "What is the employee's name?"
   },
 
-
-
   {
     type: "input",
     name: 'userName',
@@ -58,7 +54,6 @@ const questions = [
       return answers.employeeType == 'Manager'
     }
   },
-
   {
     type: "input",
     name: 'school',
@@ -67,52 +62,18 @@ const questions = [
       return answers.employeeType == 'Intern'
     }
   },
-
-
   {
     type: "confirm",
     name: 'anotherEmployee',
     message: "Is there another employee?",
     default: true
   },
-
-  // {
-  //     type: "input",
-  //     name: 'description', 
-  //     message: "What is the description of the project?"
-  // }, 
-  // {
-  //     type: "input",
-  //     name: 'installation', 
-  //     message: "What are the installation instrictions for the project?"
-  // }, 
-  // {
-  //     type: "input",
-  //     name: 'usage', 
-  //     message: "How should this project be used?"
-  // }, 
-  // {
-  //     type: "input",
-  //     name: 'contribution', 
-  //     message: "What are the contribution guidelines?"
-  // }, 
-  // {
-  //     type: "input",
-  //     name: 'test', 
-  //     message: "What are the test instructions?"
-  // }, 
-  // {
-  //     type: "list",
-  //     name: 'license', 
-  //     message: "Does your project require a license?",
-  //     choices: ['Apache License 2.0', 'MIT License', 'Mozilla Publice License 2.0']
-  // }
 ];
 
 function startGame() {
   inquirer
     .prompt(
-      /* Pass your questions in here */
+      /* Pass questions in here */
       questions
     )
     .then((answers) => {
@@ -126,7 +87,6 @@ function startGame() {
         generatePage(answersArray);
         console.log(answersArray);
       }
-      
 
     })
     .catch((error) => {
@@ -154,27 +114,18 @@ function processAnswers(answers) {
 
 }; 
 
-
-
-
-
-
-// TODO: Create a function to write README file
+// Create a function to write html file
 const generatePage = (answers) => {
 
   fs.writeFile('README.md', generateMarkdown(answers), (err) => {
     if (err) {
-      console.error(err)
+      console.error(err);
+      console.log(answers);
+      console.log(answersArray);
       return
     }
     console.log('wrote to file successfully')
   })
 };
 
-
 startGame();
-// TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
