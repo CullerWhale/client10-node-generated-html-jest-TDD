@@ -117,7 +117,7 @@ function processAnswers(answers) {
 // Create a function to write html file
 const generatePage = (answers) => {
 
-  fs.writeFile('README.md', generateMarkdown(answers), (err) => {
+  fs.writeFile('index.html', generateMarkdown(answers), (err) => {
     if (err) {
       console.error(err);
       console.log(answers);
